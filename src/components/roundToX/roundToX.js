@@ -11,16 +11,19 @@ class RoundToX extends Component {
         }
     }
     
+    // sets number from user input
     handleChange = (event) => {
         console.log(event.target.value);
         this.setState({number: event.target.value});
     };
     
+    // allows user to change which multiple they would like to use
     handleChangeMultiple = (event) => {
         console.log(event.target.value);
         this.setState({multiple: event.target.value});
     };
     
+    // checks to see which multiple is closest to user input
     roundToX = (num, x) => {
         if (num < x) {
             console.log(x);
@@ -31,12 +34,6 @@ class RoundToX extends Component {
             console.log(Math.round(num / x) * x);
         }
     };
-    
-    // componentDidUpdate() {
-    //     console.log(this.state.number);
-    // }
-
-// roundToX(224, 50);
     
     render() {
         return (
