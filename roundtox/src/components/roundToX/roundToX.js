@@ -5,8 +5,8 @@ class RoundToX extends Component {
     constructor() {
         super();
         this.state = {
-            multiple: 50,
-            number: 0,
+            multiple: '',
+            number: '',
             answer: ''
         }
     }
@@ -25,7 +25,7 @@ class RoundToX extends Component {
     
     // checks to see which multiple is closest to user input
     roundToX = (num, x) => {
-        if (num < x) {
+        if (parseInt(num) < parseInt(x)) {
             console.log(x);
             this.setState({answer: x});
         }
@@ -41,11 +41,8 @@ class RoundToX extends Component {
                 <form>
                     <label>
                         <h2>Choose The Multiple</h2>
+                        <input type="number" value={this.state.multiple} onChange={this.handleChangeMultiple}/>
                     </label>
-                    <select value={this.state.multiple} onChange={this.handleChangeMultiple}>
-                        <option value="50">50</option>
-                        <option value="22">22</option>
-                    </select>
                     
                     
                     <label>
